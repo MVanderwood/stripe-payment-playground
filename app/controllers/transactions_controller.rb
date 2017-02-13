@@ -4,7 +4,6 @@ class TransactionsController < ApplicationController
 
   def create
     @amount = 500 # cents
-    
     customer = Stripe::Customer.create customer_params
     
     Stripe::Charge.create(
